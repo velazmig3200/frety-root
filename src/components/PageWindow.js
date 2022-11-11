@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import ListItem from "./ListItem";
+import DefaultPage from "./DefaultPage";
 import cc from "./styles/classChain";
 
 class PageWindow extends Component {
 	render() {
+		const { activePage } = this.props;
+		if (activePage == "") {
+			return <DefaultPage />;
+		}
 		return (
-			<div>
-				<p
-					style={{ marginTop: "0px", color: "var(--main" }}
-					className={cc("page", "border")}>
-					Click on the tabs at the top to search artists, search
-					songs, or view recent tabs.
-				</p>
+			<div className={cc("page", "pageWindow")}>
+				<p style={{ color: "var(--highlight2)" }}>{activePage}</p>
+				<br />
+				<ListItem dataPointer={activePage} />
 			</div>
 		);
 	}
