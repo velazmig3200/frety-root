@@ -1,0 +1,19 @@
+:root {
+    --dark: hsl(192, 71%, 23%);
+    --main: hsl(150, 48%, 57%);
+    --main2: hsl(170, 48%, 57%);
+    --highlight: palevioletred;
+    --highlight2: hsl(60, 100%, 71%); 
+
+    --black: black;
+    --white: hsl(60, 100%, 97%);
+    --gray: hsl(32, 10%, 74%);
+
+    color: var(--white);
+    background-color: var(--black);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,53 @@
+@import "./aa-theme.css";
+
+:root {
+    --borderW: 2px;
+    --activeSpacing: 8px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+        border: var(--borderW) solid var(--white);
+        padding: 10px;
+    }
+    .noBorderRight {
+        border-right: 0px;
+    }
+    .noBorderBottom {
+        border-bottom: 0px;
+}
+
+
+.topMargin {
+    margin-top: 6px;
+}
+
+.pageContainer {
+    display: flex; 
+    flex-direction: column;
+    margin: 0px 5%;
+}
+
+.active {
+    background-color: var(--dark);
+    height: 30px;
+    margin-top: 0px;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+/*unused*/
+.flatTop {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+.flatBottom {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
