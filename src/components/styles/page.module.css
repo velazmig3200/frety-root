@@ -5,41 +5,33 @@
     --activeSpacing: 8px;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-}
-
-.border {
-        border: var(--borderW) solid var(--white);
-        padding: 10px;
+.page {
+        float: left;
+        user-select: none;
+        padding: 10px 19px 10px 17px;
+        border-bottom: 2px solid var(--white);
+        height: 25px;
+        margin: 0px 10px;
     }
-    .noBorderRight {
-        border-right: 0px;
-    }
-    .noBorderBottom {
-        border-bottom: 0px;
+    .active {
+        background-color: var(--dark);
+        margin-top: 0px;
+        border-radius: 4px 4px 0px 0px;
 }
 
-
-.topMargin {
-    margin-top: 6px;
+.pageWindow {
+    background-color: black;
+    padding: 10px;
+    margin-top: 10px;
+    color: var(--white);
 }
+
 
 .pageContainer {
     display: flex; 
     flex-direction: column;
-    margin: 0px 5%;
-}
-
-.active {
-    background-color: var(--dark);
-    height: 30px;
-    margin-top: 0px;
-}
-
-.unselectable {
-    user-select: none;
+    margin: 0px 2%;
+    font-size: 17px;
 }
 
 /*unused*/
@@ -50,4 +42,24 @@
 .flatBottom {
     padding-bottom: 0px;
     margin-bottom: 0px;
+}
+.topMargin {
+    margin-top: 6px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.border {
+        border: 1px solid var(--white) ;
+        padding: 10px;
+    }
+    .border:last-child {
+        background-color: rgba(255,0,0,0.2);
+    }
+    .noBorderRight {
+        border-right: 0px;
+    }
+    .noBorderBottom {
+        border-bottom: 0px;
 }

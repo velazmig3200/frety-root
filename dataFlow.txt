@@ -1,0 +1,23 @@
+App.js: {
+    <Header />: {
+        css: "header"
+    },
+    <Page {Artist} {Song} />: {
+        css: "page",
+        <PageWindow {Artist} {Song} {activePage} />: {
+            css: "page"
+            <DefaultPage />: {
+                css: "page"
+            },
+            <PageDisplay {Artist} {Song} {dataPointer} />: {
+                css: "",
+                <input />: {
+                    css: ""
+                }
+                <p> {dataPointer} </p>: {
+                    css: ""
+                }
+            }
+        }
+    }
+}
