@@ -1,65 +1,64 @@
 @import "./aa-theme.css";
 
 :root {
-    --borderW: 2px;
-    --activeSpacing: 8px;
+	--borderW: 2px;
+	--activeSpacing: 8px;
 }
 
 .page {
-        float: left;
-        user-select: none;
-        padding: 10px 19px 10px 17px;
-        border-bottom: 2px solid var(--white);
-        height: 25px;
-        margin: 0px 10px;
-    }
-    .active {
-        background-color: var(--dark);
-        margin-top: 0px;
-        border-radius: 4px 4px 0px 0px;
+	float: left;
+	user-select: none;
+	padding: 10px 19px 10px 17px;
+	border-bottom: 2px solid var(--white);
+	height: 25px;
+	margin: 0px 10px;
+}
+.active {
+	background-color: var(--dark);
+	margin-top: 0px;
+	border-radius: 4px 4px 0px 0px;
 }
 
 .pageWindow {
-    background-color: black;
-    padding: 10px;
-    margin-top: 10px;
-    color: var(--white);
+	background-color: black;
+	padding: 10px;
+	margin-top: 10px;
+	color: var(--white);
 }
 
-
 .pageContainer {
-    display: flex; 
-    flex-direction: column;
-    margin: 0px 2%;
-    font-size: 17px;
+	display: flex;
+	flex-direction: column;
+	margin: 0px 2%;
+	font-size: 17px;
 }
 
 /*unused*/
 .flatTop {
-    padding-top: 0px;
-    margin-top: 0px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
 .flatBottom {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
 .topMargin {
-    margin-top: 6px;
+	margin-top: 6px;
 }
 .center {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 .border {
-        border: 1px solid var(--white) ;
-        padding: 10px;
-    }
-    .border:last-child {
-        background-color: rgba(255,0,0,0.2);
-    }
-    .noBorderRight {
-        border-right: 0px;
-    }
-    .noBorderBottom {
-        border-bottom: 0px;
+	border: 1px solid var(--white);
+	padding: 10px;
+}
+.border:last-child {
+	background-color: rgba(255, 0, 0, 0.2);
+}
+.noBorderRight {
+	border-right: 0px;
+}
+.noBorderBottom {
+	border-bottom: 0px;
 }

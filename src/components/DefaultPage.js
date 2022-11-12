@@ -5,13 +5,10 @@ class DefaultPage extends Component {
 	render() {
 		return (
 			<div className={cc("page", "pageWindow")}>
-				<p style={{ color: "var(--highlight)" }}>
-					frety is now gluten free!
-				</p>
+				<p style={{ color: "var(--highlight)" }}>frety is now gluten free!</p>
 				<br />
 				<p>
-					Click on the tabs at the top to search artists, search
-					songs, or view recent tabs.
+					Click on the tabs at the top to search artists, search songs, or view recent tabs.
 				</p>
 			</div>
 		);

@@ -11,11 +11,7 @@ class PageWindow extends Component {
 		}
 		return (
 			<div className={cc("page", "pageWindow")}>
-				<PageDisplay
-					Artist={Artist}
-					Song={Song}
-					dataPointer={activePage}
-				/>
+				<PageDisplay Artist={Artist} Song={Song} dataPointer={activePage} />
 			</div>
 		);
 	}

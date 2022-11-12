@@ -20,14 +20,10 @@ class PageDisplay extends Component {
 
 	render() {
 		const { Artist, Song, dataPointer } = this.props;
-		const { searchBar } = this.state;
 		if (dataPointer == Artist || dataPointer == Song) {
 			return (
-				<div>
-					<input
-						className={cc("page", "searchBar")}
-						placeholder={`search ${dataPointer}`}
-					/>
+				<section>
+					<input className={cc("page", "searchBar")} placeholder={`search ${dataPointer}`} />
 					<br />
 
 					<section>
@@ -38,14 +34,10 @@ class PageDisplay extends Component {
 						<br />
 						<p>{this.randomItem()}</p>
 					</section>
-				</div>
+				</section>
 			);
 		}
-		return (
-			<div>
-				<p>{dataPointer} = PageDisplay data pointer</p>
-			</div>
-		);
+		return <p>{dataPointer} = PageDisplay data pointer</p>;
 	}
 }
 
