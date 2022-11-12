@@ -7,7 +7,7 @@ class Page extends Component {
 		super(props);
 
 		this.state = {
-			activePage: "Song",
+			activePage: "",
 			page1: "Feel Good Inc",
 			page2: "Pumped Up Kicks"
 		};
@@ -46,9 +46,8 @@ class Page extends Component {
 							onClick={() => this.click(page1)}
 							className={cc(
 								"page",
-								`${page1 != ""}?page ${
-									activePage == page1
-								}?active`
+								`${page1.trim() != ""}?page 
+								${activePage == page1}?active`
 							)}>
 							{page1}
 						</p>
@@ -56,26 +55,20 @@ class Page extends Component {
 							onClick={() => this.click(page2)}
 							className={cc(
 								"page",
-								`${page2 != ""}?page ${
-									activePage == page2
-								}?active`
+								`${page2.trim() != ""}?page 
+								${activePage == page2}?active`
 							)}>
 							{page2}
 						</p>
 					</nav>
 
 					<section>
-						<PageWindow activePage={activePage} />
+						<PageWindow
+							Artist={Artist}
+							Song={Song}
+							activePage={activePage}
+						/>
 					</section>
-					{/* <p
-					onClick={() => this.click(pageName)}
-					className={cc(
-						"page",
-						`border ${!lastEL}?noBorderRight noBorderBottom 
-						 ${this.state[pageName]}?active topMargin unselectable`
-					)}>
-					{pageName}
-					</p> */}
 				</main>
 			</div>
 		);

@@ -3,16 +3,16 @@
     to process css module classes without having to import 
     css modules into each component. 
     if you want to use this funcion with imports comment out the 
-    lines with comments, and change path1 to x;
+    lines with comments, and change path1 to moduleName;
 */
 import React from "react";
 import header from "./header.module.css";
 import page from "./page.module.css";
 const styles = { page: page, header: header };
 
-function cc(x, y) {
-	let path1 = styles[x]; //w/o importing in components
-	let classes = y.split(" ");
+function cc(moduleName, appliedClasses) {
+	let path1 = styles[moduleName]; //w/o importing in components
+	let classes = appliedClasses.split(" ");
 	let result = [];
 	//main loop
 	for (let i = 0; i < classes.length; i++) {
@@ -21,12 +21,12 @@ function cc(x, y) {
 			//if true add class
 			if (classes[i].split("?")[0] == "true") {
 				let split = classes[i].split("?")[1];
-				result[i] = `${path1[split]}`; //path1 => x //w/o importing in components
+				result[i] = `${path1[split]}`; //path1 => moduleName //w/o importing in components
 			}
 		}
 		//else just add class
 		else {
-			result[i] = `${path1[classes[i]]}`; //path1 => x //w/o importing in components
+			result[i] = `${path1[classes[i]]}`; //path1 => moduleName //w/o importing in components
 		}
 	}
 	return result.join(" ");

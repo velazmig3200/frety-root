@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import ListItem from "./ListItem";
+import PageDisplay from "./PageDisplay";
 import DefaultPage from "./DefaultPage";
 import cc from "./styles/classChain";
 
 class PageWindow extends Component {
 	render() {
-		const { activePage } = this.props;
-		if (activePage == "") {
+		const { Artist, Song, activePage } = this.props;
+		if (activePage.trim() == "") {
 			return <DefaultPage />;
 		}
 		return (
 			<div className={cc("page", "pageWindow")}>
-				<p style={{ color: "var(--highlight2)" }}>{activePage}</p>
-				<br />
-				<ListItem dataPointer={activePage} />
+				<PageDisplay
+					Artist={Artist}
+					Song={Song}
+					dataPointer={activePage}
+				/>
 			</div>
 		);
 	}
