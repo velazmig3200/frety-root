@@ -6,6 +6,12 @@ module.exports = {
 		path: path.join(__dirname, "/dist"),
 		filename: "bundle.js"
 	},
+	watch: true,
+	watchOptions: {
+		aggregateTimeout: 600,
+		poll: 3000, // Check for changes every [n] milliseconds
+		ignored: ["/node_modules/"]
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/index.html"
