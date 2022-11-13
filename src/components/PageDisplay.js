@@ -17,10 +17,11 @@ class PageDisplay extends Component {
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
 				this.elements[i] = (
-					<section key={Math.random()} style={{ color: "var(--white" }}>
+					<div key={Math.random()}>
 						<br />
 						<p>{this.result[i]}</p>
-					</section>
+						<p>___________________________</p>
+					</div>
 				);
 			}
 			return this.elements;
@@ -38,10 +39,11 @@ class PageDisplay extends Component {
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
 				this.elements[i] = (
-					<section key={Math.random()} style={{ color: "var(--white" }}>
+					<div key={Math.random()}>
 						<br />
 						<p>{this.result[i]}</p>
-					</section>
+						<p>___________________________</p>
+					</div>
 				);
 			}
 			return this.elements;
@@ -51,16 +53,13 @@ class PageDisplay extends Component {
 	render() {
 		const { Artist, Song, dataPointer } = this.props;
 		this.result = [];
+		this.elements = [];
 		if (dataPointer == Song) {
 			this.randomSongItem(4);
 			return (
 				<section>
 					<input className={cc("page", "searchBar")} placeholder={`search ${dataPointer}`} />
 					<br />
-					<section style={{ color: "var(--highlight2" }}>
-						<br />
-						<p>debug: {dataPointer}</p>
-					</section>
 					{this.elements}
 				</section>
 			);
@@ -70,10 +69,6 @@ class PageDisplay extends Component {
 				<section>
 					<input className={cc("page", "searchBar")} placeholder={`search ${dataPointer}`} />
 					<br />
-					<section style={{ color: "var(--highlight2" }}>
-						<br />
-						<p>debug: {dataPointer}</p>
-					</section>
 					{this.elements}
 				</section>
 			);
