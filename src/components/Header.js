@@ -5,9 +5,9 @@ class Header extends Component {
 	render() {
 		return (
 			<h1 className={cc("header", "header")}>
-				<span style={{ color: "var(--dark)" }}>frety</span>
-				<span style={{ color: "var(--main)" }}>frety</span>
-				<span style={{ color: "var(--highlight)" }}>frety</span>
+				<span className={cc("header", "span1")}>frety</span>
+				<span className={cc("header", "span2")}>frety</span>
+				<span className={cc("header", "span3")}>frety</span>
 			</h1>
 		);
 	}
