@@ -20,7 +20,7 @@
 }
 
 .pageWindow {
-	background-color: black;
+	border-radius: 5px;
 	padding: 10px;
 	margin-top: 10px;
 	color: var(--white);
@@ -31,6 +31,19 @@
 	flex-direction: column;
 	margin: 0px 2%;
 	font-size: 17px;
+}
+
+.searchBar {
+	margin-bottom: 8px;
+}
+
+.randomItem {
+	border-bottom: 2px solid var(--gray);
+	width: 45%;
+	padding: 13px;
+}
+.randomItem:last-child {
+	border-bottom: 0px;
 }
 
 /*unused*/

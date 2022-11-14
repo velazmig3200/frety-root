@@ -3,19 +3,21 @@ App.js: {
         css: "header"
     },
     <Page {Artist} {Song} />: {
-        css: "page",
+        css: "page, page, active, pageContainer",
         <PageWindow {Artist} {Song} {activePage} />: {
-            css: "page"
+            css: "page, pageWindow"
             <DefaultPage />: {
-                css: "page"
+                css: "page, pageWindow"
             },
             <PageDisplay {Artist} {Song} {dataPointer} />: {
-                css: "",
-                {dataPointer = Artist}: {
-                    css: "",
+                css: "page",
+                {randomArtistItem} {dataPointer = Artist}: {
+                    css: "page, randomItem",
+                    <input />: {css: "page, searchBar"}
                 } 
-                {dataPointer = Song}: {
-                    css: ""
+                {randomSongItem} {dataPointer = Song}: {
+                    css: "page, randomItem",
+                    <input />: {css: "page, searchBar"}
                 }
                 <p> {dataPointer = other} </p>: {
                     css: ""
