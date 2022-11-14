@@ -11,13 +11,14 @@ App.js: {
             },
             <PageDisplay {Artist} {Song} {dataPointer} />: {
                 css: "page",
+                <input />: {
+                    css: "page, searchBar"
+                },
                 {randomArtistItem} {dataPointer = Artist}: {
                     css: "page, randomItem",
-                    <input />: {css: "page, searchBar"}
                 } 
                 {randomSongItem} {dataPointer = Song}: {
                     css: "page, randomItem",
-                    <input />: {css: "page, searchBar"}
                 }
                 <p> {dataPointer = other} </p>: {
                     css: ""

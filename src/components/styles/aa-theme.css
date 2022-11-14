@@ -9,6 +9,7 @@
 
 	--black: #000;
 	--white: hsl(60, 100%, 98%);
+	--darkGray: #222;
 	--gray: #666;
 	--lightGray: hsl(32, 10%, 74%);
 	--debug: rgba(255, 0, 0, 0.2);
@@ -22,7 +23,3 @@
 	margin: 0px;
 	padding: 0px;
 }
-
-/* * {
-	background-color: var(--debug);
-} */

@@ -54,7 +54,10 @@ class PageDisplay extends Component {
 			this.randomSongItem(4);
 			return (
 				<section>
-					<input className={cc("page", "searchBar")} placeholder={`search ${dataPointer}`} />
+					<input
+						className={cc("page", "searchBar")}
+						placeholder={`search ${dataPointer.toLowerCase()}`}
+					/>
 					<br />
 					{this.elements}
 				</section>
@@ -63,7 +66,10 @@ class PageDisplay extends Component {
 			this.randomArtistItem(3);
 			return (
 				<section>
-					<input className={cc("page", "searchBar")} placeholder={`search ${dataPointer}`} />
+					<input
+						className={cc("page", "searchBar")}
+						placeholder={`search ${dataPointer.toLowerCase()}`}
+					/>
 					<br />
 					{this.elements}
 				</section>
