@@ -5,7 +5,7 @@ import cc from "./styles/classChain";
 
 class PageWindow extends Component {
 	render() {
-		const { Artist, Song, activePage, clickSongItem } = this.props;
+		const { Artist, Song, activePage, clickItem } = this.props;
 		if (activePage == "") {
 			return <DefaultPage />;
 		}
@@ -15,7 +15,7 @@ class PageWindow extends Component {
 					Artist={Artist}
 					Song={Song}
 					dataPointer={activePage}
-					clickSongItem={clickSongItem}
+					clickItem={clickItem}
 				/>
 			</div>
 		);

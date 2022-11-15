@@ -57,7 +57,7 @@ function Page({ Artist, Song }) {
 					Artist={Artist}
 					Song={Song}
 					activePage={activePage}
-					clickSongItem={x => songItem(x)}
+					clickItem={x => songItem(x)}
 				/>
 			</div>
 		</main>

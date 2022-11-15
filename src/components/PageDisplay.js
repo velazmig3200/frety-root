@@ -20,7 +20,7 @@ class PageDisplay extends Component {
 					<div
 						key={Math.random()}
 						className={cc("page", "randomItem")}
-						onClick={() => this.props.clickSongItem(this.result[i])}>
+						onClick={() => this.props.clickItem(this.result[i])}>
 						<p>{this.result[i]}</p>
 					</div>
 				);
@@ -43,17 +43,13 @@ class PageDisplay extends Component {
 					<div
 						key={Math.random()}
 						className={cc("page", "randomItem")}
-						onClick={() => this.click(this.result[i])}>
+						onClick={() => this.props.clickItem(this.result[i])}>
 						<p>{this.result[i]}</p>
 					</div>
 				);
 			}
 			return this.elements;
 		}
-	}
-
-	click(x) {
-		console.log(x);
 	}
 
 	render() {
@@ -85,7 +81,12 @@ class PageDisplay extends Component {
 				</section>
 			);
 		}
-		return <p style={{ color: "var(--highlight2" }}>debug: {dataPointer} = dataPointer</p>;
+
+		if (Object.keys(tabData).includes(dataPointer.toLowerCase())) {
+			return <p style={{ color: "var(--highlight2" }}>Song: {dataPointer}</p>;
+		}
+		return <p style={{ color: "var(--highlight2" }}>Artist: {dataPointer}</p>;
+		// return <p style={{ color: "var(--highlight2" }}>debug: {dataPointer} = dataPointer</p>;
 	}
 }
 
