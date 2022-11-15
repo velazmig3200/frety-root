@@ -17,7 +17,10 @@ class PageDisplay extends Component {
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
 				this.elements[i] = (
-					<div key={Math.random()} className={cc("page", "randomItem")}>
+					<div
+						key={Math.random()}
+						className={cc("page", "randomItem")}
+						onClick={() => this.click(this.result[i])}>
 						<p>{this.result[i]}</p>
 					</div>
 				);
@@ -37,13 +40,20 @@ class PageDisplay extends Component {
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
 				this.elements[i] = (
-					<div key={Math.random()} className={cc("page", "randomItem")}>
+					<div
+						key={Math.random()}
+						className={cc("page", "randomItem")}
+						onClick={() => this.click(this.result[i])}>
 						<p>{this.result[i]}</p>
 					</div>
 				);
 			}
 			return this.elements;
 		}
+	}
+
+	click(x) {
+		console.log(x);
 	}
 
 	render() {

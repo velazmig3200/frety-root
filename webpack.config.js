@@ -9,7 +9,7 @@ module.exports = {
 	watch: true,
 	watchOptions: {
 		aggregateTimeout: 600,
-		poll: 3000, // Check for changes every [n] milliseconds
+		poll: 1700, // Check for changes every [n] milliseconds
 		ignored: ["/node_modules/"]
 	},
 	plugins: [
