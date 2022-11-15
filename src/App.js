@@ -8,7 +8,7 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<Page Artist="Artist" Song="Song" />
+				<Page Artist="Artist" Song="Song" page1="" page2="" />
 			</div>
 		);
 	}

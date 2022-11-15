@@ -5,13 +5,18 @@ import cc from "./styles/classChain";
 
 class PageWindow extends Component {
 	render() {
-		const { Artist, Song, activePage } = this.props;
-		if (activePage.trim() == "") {
+		const { Artist, Song, activePage, clickSongItem } = this.props;
+		if (activePage == "") {
 			return <DefaultPage />;
 		}
 		return (
 			<div className={cc("page", "pageWindow")}>
-				<PageDisplay Artist={Artist} Song={Song} dataPointer={activePage} />
+				<PageDisplay
+					Artist={Artist}
+					Song={Song}
+					dataPointer={activePage}
+					clickSongItem={clickSongItem}
+				/>
 			</div>
 		);
 	}

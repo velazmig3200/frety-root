@@ -1,58 +1,67 @@
 import React, { Component } from "react";
+import { useState } from "react";
 import PageWindow from "./PageWindow";
 import cc from "./styles/classChain";
 
-class Page extends Component {
-	constructor(props) {
-		super(props);
+function Page({ Artist, Song }) {
+	const [activePage, setActivePage] = useState("");
+	const [page1, setPage1] = useState("");
+	const [page2, setPage2] = useState("");
+	const [songItemToggle, setSongItemToggle] = useState(false);
 
-		this.state = {
-			activePage: "",
-			page1: "Feel Good Inc",
-			page2: ""
-		};
+	function clickNav(x) {
+		x == activePage ? setActivePage("") : setActivePage(x);
 	}
 
-	click(x) {
-		x == this.state.activePage
-			? this.setState({ activePage: "" })
-			: this.setState({ activePage: x });
+	function songItem(x) {
+		if (x == page1 || x == page2) {
+			setActivePage(x);
+		} else if (songItemToggle == false) {
+			setPage1(x);
+			setActivePage(x);
+			setSongItemToggle(!songItemToggle);
+		} else {
+			setPage2(x);
+			setActivePage(x);
+			setSongItemToggle(!songItemToggle);
+		}
 	}
 
-	render() {
-		const { Artist, Song } = this.props;
-		const { page1, page2, activePage } = this.state;
-		return (
-			<main className={cc("page", "pageContainer")}>
-				<nav>
-					<p
-						onClick={() => this.click(Artist)}
-						className={cc("page", `page ${activePage == Artist}?active`)}>
-						{Artist}
-					</p>
-					<p
-						onClick={() => this.click(Song)}
-						className={cc("page", `page ${activePage == Song}?active`)}>
-						{Song}
-					</p>
-					<p
-						onClick={() => this.click(page1)}
-						className={cc("page", `${page1 != ""}?page ${activePage == page1}?active`)}>
-						{page1}
-					</p>
-					<p
-						onClick={() => this.click(page2)}
-						className={cc("page", `${page2 != ""}?page ${activePage == page2}?active`)}>
-						{page2}
-					</p>
-				</nav>
+	return (
+		<main className={cc("page", "pageContainer")}>
+			<nav>
+				<p
+					onClick={() => clickNav(Artist)}
+					className={cc("page", `${Artist != ""}?page ${activePage == Artist}?active`)}>
+					{Artist}
+				</p>
+				<p
+					onClick={() => clickNav(Song)}
+					className={cc("page", `${Song != ""}?page ${activePage == Song}?active`)}>
+					{Song}
+				</p>
+				<p
+					onClick={() => clickNav(page1)}
+					className={cc("page", `${page1 != ""}?page ${activePage == page1}?active`)}>
+					{page1}
+				</p>
+				<p
+					onClick={() => clickNav(page2)}
+					className={cc("page", `${page2 != ""}?page ${activePage == page2}?active`)}>
+					{page2}
+				</p>
+			</nav>
 
-				<section>
-					<PageWindow Artist={Artist} Song={Song} activePage={activePage} />
-				</section>
-			</main>
-		);
-	}
+			<div>
+				<PageWindow
+					Artist={Artist}
+					Song={Song}
+					activePage={activePage}
+					clickSongItem={x => songItem(x)}
+				/>
+			</div>
+		</main>
+	);
 }
 
 export default Page;

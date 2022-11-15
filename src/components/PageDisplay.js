@@ -20,7 +20,7 @@ class PageDisplay extends Component {
 					<div
 						key={Math.random()}
 						className={cc("page", "randomItem")}
-						onClick={() => this.click(this.result[i])}>
+						onClick={() => this.props.clickSongItem(this.result[i])}>
 						<p>{this.result[i]}</p>
 					</div>
 				);

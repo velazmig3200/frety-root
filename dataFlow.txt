@@ -4,6 +4,9 @@ App.js: {
     },
     <Page {Artist} {Song} />: {
         css: "page, page, active, pageContainer",
+        /*
+            {randomItem's}: ""
+        */
         <PageWindow {Artist} {Song} {activePage} />: {
             css: "page, pageWindow"
             <DefaultPage />: {
