@@ -10,9 +10,11 @@ function Page({ Artist, Song }) {
 	const [page1, setPage1] = useState("");
 	const [page2, setPage2] = useState("");
 	const [songItemToggle, setSongItemToggle] = useState(false);
+    const [inputValue, setInputValue] = useState("");
 
 	//onClick: set [activePage] to the navTab that was clicked
 	function clickNav(clickedNavTab) {
+        setInputValue("");
 		clickedNavTab == activePage ? setActivePage("") : setActivePage(clickedNavTab);
 	}
 
@@ -31,6 +33,10 @@ function Page({ Artist, Song }) {
 			setActivePage(clickedItem);
 			setSongItemToggle(!songItemToggle);
 		}
+	}
+
+    function handleChange(event) {
+		setInputValue(event.target.value);
 	}
 
 	return (
@@ -64,6 +70,8 @@ function Page({ Artist, Song }) {
 					Song={Song}
 					activePage={activePage}
 					clickItem={clickedItem => newNavTab(clickedItem)}
+                    handleChange={value => handleChange(value)}
+                    value={inputValue}
 				/>
 			</div>
 		</main>

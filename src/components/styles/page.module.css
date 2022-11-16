@@ -55,12 +55,12 @@
 	color: var(--lightGray);
 }
 
-.randomItem {
+.listItem {
 	width: 45%;
 	padding: 13px;
 	border-bottom: 2px solid var(--gray);
 }
-.randomItem:last-child {
+.listItem:last-child {
 	border-bottom: 0px;
 }
 
