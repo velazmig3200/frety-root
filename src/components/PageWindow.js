@@ -5,6 +5,7 @@ import cc from "./styles/classChain";
 
 class PageWindow extends Component {
 	render() {
+		//if no active page display defaultPage, else show active page
 		const { Artist, Song, activePage, clickItem } = this.props;
 		if (activePage == "") {
 			return <DefaultPage />;

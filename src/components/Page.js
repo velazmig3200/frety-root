@@ -4,26 +4,31 @@ import PageWindow from "./PageWindow";
 import cc from "./styles/classChain";
 
 function Page({ Artist, Song }) {
+	//state hooks/variables
+	//const [[variable name], [setter function name]] = useState([default value])
 	const [activePage, setActivePage] = useState("");
 	const [page1, setPage1] = useState("");
 	const [page2, setPage2] = useState("");
 	const [songItemToggle, setSongItemToggle] = useState(false);
 
-	function clickNav(x) {
-		x == activePage ? setActivePage("") : setActivePage(x);
+	//onClick: set [activePage] to the navTab that was clicked
+	function clickNav(clickedNavTab) {
+		clickedNavTab == activePage ? setActivePage("") : setActivePage(clickedNavTab);
 	}
 
-	function songItem(x) {
-		if (x == page1 || x == page2) {
-			x == page1 ? setSongItemToggle(true) : setSongItemToggle(false);
-			setActivePage(x);
+	//song/artist item onclick: add respective navTab
+	function newNavTab(clickedItem) {
+		//check for previous value; already opened tabs, else new navTab
+		if (clickedItem == page1 || clickedItem == page2) {
+			clickedItem == page1 ? setSongItemToggle(true) : setSongItemToggle(false);
+			setActivePage(clickedItem);
 		} else if (songItemToggle == false) {
-			setPage1(x);
-			setActivePage(x);
+			setPage1(clickedItem);
+			setActivePage(clickedItem);
 			setSongItemToggle(!songItemToggle);
 		} else {
-			setPage2(x);
-			setActivePage(x);
+			setPage2(clickedItem);
+			setActivePage(clickedItem);
 			setSongItemToggle(!songItemToggle);
 		}
 	}
@@ -58,7 +63,7 @@ function Page({ Artist, Song }) {
 					Artist={Artist}
 					Song={Song}
 					activePage={activePage}
-					clickItem={x => songItem(x)}
+					clickItem={clickedItem => newNavTab(clickedItem)}
 				/>
 			</div>
 		</main>
