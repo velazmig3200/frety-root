@@ -15,6 +15,7 @@ function Page({ Artist, Song }) {
 
 	function songItem(x) {
 		if (x == page1 || x == page2) {
+			x == page1 ? setSongItemToggle(true) : setSongItemToggle(false);
 			setActivePage(x);
 		} else if (songItemToggle == false) {
 			setPage1(x);

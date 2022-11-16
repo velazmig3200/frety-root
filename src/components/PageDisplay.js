@@ -56,20 +56,9 @@ class PageDisplay extends Component {
 		const { Artist, Song, dataPointer } = this.props;
 		this.result = [];
 		this.elements = [];
-		if (dataPointer == Song) {
-			this.randomSongItem(4);
-			return (
-				<section>
-					<input
-						className={cc("page", "searchBar")}
-						placeholder={`search ${dataPointer.toLowerCase()}`}
-					/>
-					<br />
-					{this.elements}
-				</section>
-			);
-		} else if (dataPointer == Artist) {
-			this.randomArtistItem(3);
+		//for default tabs, "Artist" and "Song"
+		if (dataPointer == Song || dataPointer == Artist) {
+			dataPointer == Song ? this.randomSongItem(4) : this.randomArtistItem(3);
 			return (
 				<section>
 					<input
@@ -81,12 +70,11 @@ class PageDisplay extends Component {
 				</section>
 			);
 		}
-
+		//for other, not default, tabs
 		if (Object.keys(tabData).includes(dataPointer.toLowerCase())) {
 			return <p style={{ color: "var(--highlight2" }}>Song: {dataPointer}</p>;
 		}
 		return <p style={{ color: "var(--highlight2" }}>Artist: {dataPointer}</p>;
-		// return <p style={{ color: "var(--highlight2" }}>debug: {dataPointer} = dataPointer</p>;
 	}
 }
 
