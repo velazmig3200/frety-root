@@ -6,7 +6,6 @@ class PageDisplay extends Component {
 	//variables (should be moved into state)
 	result = [];
 	elements = [];
-	pointerTracker = this.props.Artist;
 
 	//get random song/artist items, add to elements[] and return them
 	randomItem(dataPointer, len) {
@@ -24,7 +23,7 @@ class PageDisplay extends Component {
 			for (let i = 0; i < this.result.length; i++) {
 				this.elements[i] = (
 					<div
-						key={Math.random()}
+						key={i}
 						className={cc("page", "listItem")}
 						onClick={() => this.props.clickItem(this.result[i])}>
 						<p>{this.result[i]}</p>
@@ -55,7 +54,7 @@ class PageDisplay extends Component {
 			for (let i = 0; i < maxLength; i++) {
 				if (keys[i].includes(inputValue.toLowerCase())) {
 					this.elements.push(
-						<p key={Math.random()} className={cc("page", "listItem")}>
+						<p key={i} className={cc("page", "listItem")}>
 							{tabData[keys[i]]["songInfo"][dataPointer]}
 						</p>
 					);
@@ -68,7 +67,7 @@ class PageDisplay extends Component {
 		for (let i = 0; i < maxLength; i++) {
 			if (items[i].toLowerCase().includes(inputValue.toLowerCase())) {
 				this.elements.push(
-					<p key={Math.random()} className={cc("page", "listItem")}>
+					<p key={i} className={cc("page", "listItem")}>
 						{items[i]}
 					</p>
 				);
@@ -90,7 +89,7 @@ class PageDisplay extends Component {
 				this.search(dataPointer, value);
 			}
 			return (
-				<section>
+				<section className={cc("page", "pageWindow")}>
 					<input
 						type="text"
 						value={value}
@@ -105,9 +104,9 @@ class PageDisplay extends Component {
 		}
 		//for other, not default, tabs
 		if (Object.keys(tabData).includes(dataPointer.toLowerCase())) {
-			return <p style={{ color: "var(--highlight2" }}>Song: {dataPointer}</p>;
+			return <p style={{ color: "var(--highlight2)" }}>Song: {dataPointer}</p>;
 		}
-		return <p style={{ color: "var(--highlight2" }}>Artist: {dataPointer}</p>;
+		return <p style={{ color: "var(--highlight2)" }}>Artist: {dataPointer}</p>;
 	}
 }
 

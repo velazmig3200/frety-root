@@ -4,7 +4,7 @@ import cc from "./styles/classChain";
 class DefaultPage extends Component {
 	render() {
 		return (
-			<div className={cc("page", "pageWindow")}>
+			<div className={cc("page", "defaultPage")}>
 				<p style={{ color: "var(--highlight)" }}>frety is now gluten free!</p>
 				<br />
 				<p>

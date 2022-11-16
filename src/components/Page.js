@@ -41,7 +41,7 @@ function Page({ Artist, Song }) {
 
 	return (
 		<main className={cc("page", "pageContainer")}>
-			<nav>
+			<nav className={cc("page", "center")}>
 				<p
 					onClick={() => clickNav(Artist)}
 					className={cc("page", `${Artist != ""}?page ${activePage == Artist}?active`)}>
@@ -64,7 +64,7 @@ function Page({ Artist, Song }) {
 				</p>
 			</nav>
 
-			<div>
+			<section>
 				<PageWindow
 					Artist={Artist}
 					Song={Song}
@@ -73,7 +73,7 @@ function Page({ Artist, Song }) {
                     handleChange={value => handleChange(value)}
                     value={inputValue}
 				/>
-			</div>
+			</section>
 		</main>
 	);
 }

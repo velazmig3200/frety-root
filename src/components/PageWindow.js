@@ -11,14 +11,14 @@ class PageWindow extends Component {
 			return <DefaultPage />;
 		}
 		return (
-			<div className={cc("page", "pageWindow")}>
+			<div>
 				<PageDisplay
 					Artist={Artist}
 					Song={Song}
 					dataPointer={activePage}
 					clickItem={clickItem}
-                    handleChange={handleChange}
-                    value={value}
+					handleChange={handleChange}
+					value={value}
 				/>
 			</div>
 		);
