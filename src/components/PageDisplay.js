@@ -5,6 +5,7 @@ import { tabData } from "./data";
 class PageDisplay extends Component {
 	//variables (should be moved into state)
 	result = [];
+	result2 = [];
 	elements = [];
 
 	//get random song/artist items, add to elements[] and return them
@@ -13,8 +14,9 @@ class PageDisplay extends Component {
 		let keys = Object.keys(tabData);
 		let randomInt = Math.floor(Math.random() * keys.length);
 		let item = tabData[keys[randomInt]]["songInfo"][dataPointer];
+		let artistImage = tabData[keys[randomInt]]["songInfo"]["Artist Image"];
 		//if item is !included already in result[], push(item)
-		!this.result.includes(item) && this.result.push(item);
+		!this.result.includes(item) && this.result.push(item) && this.result2.push(artistImage);
 
 		//if (result.length < len) call again, else consolidate elements[] and result[]
 		if (this.result.length < len) {
@@ -27,7 +29,8 @@ class PageDisplay extends Component {
 						className={cc("page", "listItem")}
 						onClick={() => this.props.clickItem(this.result[i])}>
 						<img
-							src={tabData["feel good inc"]["songInfo"]["ArtistImg"]}
+							// src={tabData["feel good inc"]["songInfo"]["Artist Image"]}
+							src={this.result2[i]}
 							className={cc("page", "listItemImg")}></img>
 						<p>{this.result[i]}</p>
 					</div>
@@ -102,7 +105,7 @@ class PageDisplay extends Component {
 					/>
 					<br />
 					{/* <div style={{ display: "flex", flexDirection: "row" }}>{this.elements}</div> */}
-					<div>{this.elements}{this.elements}</div>
+					<div>{this.elements}</div>
 				</section>
 			);
 		}

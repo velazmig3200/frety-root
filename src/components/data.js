@@ -1,3 +1,9 @@
+/*
+needs restructure. organizing by songs is not the best way. there are 
+too many duplicates of pieces of songInfo. 
+the data structure should follow the hierarchy starting from artist, to 
+artist info, album, album info, song, song info/tabs, etc...
+*/
 export const tabData = {
 	"feel good inc": {
 		songInfo: {
@@ -5,7 +11,8 @@ export const tabData = {
 			Artist: "Gorillaz",
 			Album: "Demon Days",
 			Release: "2005",
-            ArtistImg: "https://lh3.googleusercontent.com/PbXmq8wbQDuMg1Jlv0VLRhNBD7WlgT7OzAbwi_VR8VxeyD6qhydaKvLR3EM79VqgCwmIIc0kO4vt9Sg=w1440-h600-p-l90-rj",
+			"Artist Image":
+				"https://lh3.googleusercontent.com/PbXmq8wbQDuMg1Jlv0VLRhNBD7WlgT7OzAbwi_VR8VxeyD6qhydaKvLR3EM79VqgCwmIIc0kO4vt9Sg=w1440-h600-p-l90-rj",
 			Instruments: "Bass, Guitar, Ukulele"
 		},
 		bass: {
@@ -35,6 +42,7 @@ export const tabData = {
 			Artist: "Foster the People",
 			Album: "Torches",
 			Release: "2011",
+			"Artist Image": "",
 			Instruments: "Bass"
 		},
 		bass: {
@@ -49,6 +57,8 @@ export const tabData = {
 			Song: "Melancholy Hill",
 			Artist: "Gorillaz",
 			Album: "Plastic Beach",
+			"Artist Image":
+				"https://lh3.googleusercontent.com/PbXmq8wbQDuMg1Jlv0VLRhNBD7WlgT7OzAbwi_VR8VxeyD6qhydaKvLR3EM79VqgCwmIIc0kO4vt9Sg=w1440-h600-p-l90-rj",
 			Release: "2010"
 		}
 	},
@@ -57,6 +67,7 @@ export const tabData = {
 			Song: "Heads Will Roll",
 			Artist: "Yeah Yeah Yeahs",
 			Album: "It's Blitz!",
+			"Artist Image": "",
 			Release: "2009"
 		},
 		bass: {
