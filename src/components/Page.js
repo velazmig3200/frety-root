@@ -3,18 +3,18 @@ import { useState } from "react";
 import PageWindow from "./PageWindow";
 import cc from "./styles/classChain";
 
-function Page({ Artist, Song }) {
+function Page({ artist, song }) {
 	//state hooks/variables
 	//const [[variable name], [setter function name]] = useState([default value])
 	const [activePage, setActivePage] = useState("");
 	const [page1, setPage1] = useState("");
 	const [page2, setPage2] = useState("");
 	const [songItemToggle, setSongItemToggle] = useState(false);
-    const [inputValue, setInputValue] = useState("");
+	const [inputValue, setInputValue] = useState("");
 
 	//onClick: set [activePage] to the navTab that was clicked
 	function clickNav(clickedNavTab) {
-        setInputValue("");
+		setInputValue("");
 		clickedNavTab == activePage ? setActivePage("") : setActivePage(clickedNavTab);
 	}
 
@@ -35,7 +35,7 @@ function Page({ Artist, Song }) {
 		}
 	}
 
-    function handleChange(event) {
+	function handleChange(event) {
 		setInputValue(event.target.value);
 	}
 
@@ -43,14 +43,14 @@ function Page({ Artist, Song }) {
 		<main className={cc("page", "pageContainer")}>
 			<nav className={cc("page", "center")}>
 				<p
-					onClick={() => clickNav(Artist)}
-					className={cc("page", `${Artist != ""}?page ${activePage == Artist}?active`)}>
-					{Artist}
+					onClick={() => clickNav(artist)}
+					className={cc("page", `${artist != ""}?page ${activePage == artist}?active`)}>
+					{artist}
 				</p>
 				<p
-					onClick={() => clickNav(Song)}
-					className={cc("page", `${Song != ""}?page ${activePage == Song}?active`)}>
-					{Song}
+					onClick={() => clickNav(song)}
+					className={cc("page", `${song != ""}?page ${activePage == song}?active`)}>
+					{song}
 				</p>
 				<p
 					onClick={() => clickNav(page1)}
@@ -64,14 +64,14 @@ function Page({ Artist, Song }) {
 				</p>
 			</nav>
 
-			<section style={{height: "100%"}}>
+			<section style={{ height: "100%" }}>
 				<PageWindow
-					Artist={Artist}
-					Song={Song}
+					artist={artist}
+					song={song}
 					activePage={activePage}
 					clickItem={clickedItem => newNavTab(clickedItem)}
-                    handleChange={value => handleChange(value)}
-                    value={inputValue}
+					handleChange={value => handleChange(value)}
+					value={inputValue}
 				/>
 			</section>
 		</main>

@@ -11,9 +11,8 @@ class PageDisplay extends Component {
 
 	//get random song/artist items, add to elements[] and return them
 	randomItem(dataPointer, len) {
-		let dataPointer1 = dataPointer.toLowerCase();
 		let getArtist = input => musicData.list.getArtist(input);
-		let itemList = input => musicData.list[dataPointer1](input);
+		let itemList = input => musicData.list[dataPointer](input);
 		let randomInt1 = Math.floor(Math.random() * itemList("key").length);
 		let item1 = {
 			name: itemList("key")[randomInt1],
@@ -26,7 +25,7 @@ class PageDisplay extends Component {
 			this.randomItem(dataPointer, len);
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
-				if (dataPointer == "Song") {
+				if (dataPointer == "song") {
 					this.result[i].image = getArtist(this.result[i].name).image;
 				}
 				this.elements[i] = (
@@ -46,7 +45,6 @@ class PageDisplay extends Component {
 	}
 
 	search(dataPointer, inputValue) {
-		dataPointer = dataPointer.toLowerCase();
 		let itemList = input => musicData.list[dataPointer](input);
 		let getArtist = input => musicData.list.getArtist(input);
 		let maxLength1 = 20;
@@ -57,9 +55,6 @@ class PageDisplay extends Component {
 				dataPointer == "artist"
 					? (source = itemList()[itemList("key")[i]].image)
 					: (source = getArtist(itemList("key")[i]).image);
-				// if (dataPointer == "Song") {
-				//     let source1 = getArtist(itemList()[i]).image;
-				// }
 				this.elements.push(
 					<div
 						key={i}
@@ -75,12 +70,12 @@ class PageDisplay extends Component {
 	}
 
 	render() {
-		const { Artist, Song, dataPointer, handleChange, value } = this.props;
+		const { artist, song, dataPointer, handleChange, value } = this.props;
 		//reset arrays for re-render
 		this.result = [];
 		this.elements = [];
-		//for default tabs, "Artist" and "Song"
-		if (dataPointer == Song || dataPointer == Artist) {
+		//for default tabs, "artist" and "song"
+		if (dataPointer == song || dataPointer == artist) {
 			if (value == "") {
 				this.randomItem(dataPointer, 4);
 			} else {
@@ -102,9 +97,9 @@ class PageDisplay extends Component {
 		}
 		//for other, not default, tabs
 		if (Object.keys(musicData).includes(dataPointer)) {
-			return <p style={{ color: "var(--highlight2)" }}>Artist: {dataPointer}</p>;
+			return <p style={{ color: "var(--highlight2)" }}>artist: {dataPointer}</p>;
 		}
-		return <p style={{ color: "var(--highlight2)" }}>Song: {dataPointer}</p>;
+		return <p style={{ color: "var(--highlight2)" }}>song: {dataPointer}</p>;
 	}
 }
 
