@@ -45,42 +45,29 @@ class PageDisplay extends Component {
 		}
 	}
 
-	getArtistList(items) {
-		let keys = Object.keys(tabData);
-		for (let i = 0; i < keys.length; i++) {
-			let Artist = tabData[keys[i]]["songInfo"]["Artist"];
-			if (!items.includes(Artist)) {
-				items.push(Artist);
-			}
-		}
-		return items;
-	}
-
 	search(dataPointer, inputValue) {
-		let keys = Object.keys(tabData);
-		let maxLength;
-		let items = [];
-		if (dataPointer == "Song") {
-			keys.length > 20 ? (maxLength = 20) : (maxLength = keys.length);
-			for (let i = 0; i < maxLength; i++) {
-				if (keys[i].includes(inputValue.toLowerCase())) {
-					this.elements.push(
-						<p key={i} className={cc("page", "listItem")}>
-							{tabData[keys[i]]["songInfo"][dataPointer]}
-						</p>
-					);
-				}
-			}
-			return this.elements;
-		}
-		this.getArtistList(items);
-		items.length > 20 ? (maxLength = 20) : (maxLength = items.length);
-		for (let i = 0; i < maxLength; i++) {
-			if (items[i].toLowerCase().includes(inputValue.toLowerCase())) {
+		dataPointer = dataPointer.toLowerCase();
+		let itemList = input => musicData.list[dataPointer](input);
+		let getArtist = input => musicData.list.getArtist(input);
+		let maxLength1 = 20;
+		itemList("key").length > 20 ? (maxLength1 = 20) : (maxLength1 = itemList("key").length);
+		for (let i = 0; i < maxLength1; i++) {
+			if (itemList("key")[i].toLowerCase().includes(inputValue.toLowerCase())) {
+				let source;
+				dataPointer == "artist"
+					? (source = itemList()[itemList("key")[i]].image)
+					: (source = getArtist(itemList("key")[i]).image);
+				// if (dataPointer == "Song") {
+				//     let source1 = getArtist(itemList()[i]).image;
+				// }
 				this.elements.push(
-					<p key={i} className={cc("page", "listItem")}>
-						{items[i]}
-					</p>
+					<div
+						key={i}
+						className={cc("page", "listItem")}
+						onClick={() => this.props.clickItem(this.result[i].name)}>
+						<img loading="lazy" src={source} className={cc("page", "listItemImg")}></img>
+						<p>{itemList("key")[i]}</p>
+					</div>
 				);
 			}
 		}
@@ -95,7 +82,7 @@ class PageDisplay extends Component {
 		//for default tabs, "Artist" and "Song"
 		if (dataPointer == Song || dataPointer == Artist) {
 			if (value == "") {
-				this.randomItem(dataPointer, 3);
+				this.randomItem(dataPointer, 4);
 			} else {
 				this.search(dataPointer, value);
 			}

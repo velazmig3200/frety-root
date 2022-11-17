@@ -102,13 +102,15 @@ export const musicData = {
 		album: {
 			torches: {
 				song: {
-					"i miss u": {}
+					"i miss u": {},
+					Houdini: {}
 				}
 			}
 		}
 	},
 	"Yeah Yeah Yeahs": {
-		image: "https://lh3.googleusercontent.com/_A-7JeKRO2rw8oVT2H2mLpnCF1rIA81XdbAz4xCXho0SvjJzSchdXyVd-tJ2grfpSph48DnyaNpEagA=w1440-h600-p-l90-rj",
+		image:
+			"https://lh3.googleusercontent.com/_A-7JeKRO2rw8oVT2H2mLpnCF1rIA81XdbAz4xCXho0SvjJzSchdXyVd-tJ2grfpSph48DnyaNpEagA=w1440-h600-p-l90-rj",
 		album: ""
 	},
 	"Mac Miller": {
