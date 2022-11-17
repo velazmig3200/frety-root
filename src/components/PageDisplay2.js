@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import cc from "./styles/classChain";
-import { tabData } from "./data";
 import { musicData } from "./data2.js";
 
 class PageDisplay extends Component {
