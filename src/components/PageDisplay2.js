@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import cc from "./styles/classChain";
 import { tabData } from "./data";
+import { musicData } from "./data2.js";
 
 class PageDisplay extends Component {
 	//variables (should be moved into state)
@@ -87,6 +88,7 @@ class PageDisplay extends Component {
 		//reset arrays for re-render
 		this.result = [];
 		this.elements = [];
+		console.log(musicData.list.song());
 		//for default tabs, "Artist" and "Song"
 		if (dataPointer == Song || dataPointer == Artist) {
 			if (value == "") {
@@ -109,10 +111,10 @@ class PageDisplay extends Component {
 			);
 		}
 		//for other, not default, tabs
-		if (Object.keys(tabData).includes(dataPointer.toLowerCase())) {
-			return <p style={{ color: "var(--highlight2)" }}>Song: {dataPointer}</p>;
+		if (Object.keys(musicData).includes(dataPointer)) {
+			return <p style={{ color: "var(--highlight2)" }}>Artist: {dataPointer}</p>;
 		}
-		return <p style={{ color: "var(--highlight2)" }}>Artist: {dataPointer}</p>;
+		return <p style={{ color: "var(--highlight2)" }}>Song: {dataPointer}</p>;
 	}
 }
 

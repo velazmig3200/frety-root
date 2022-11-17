@@ -34,15 +34,16 @@
 .backgroundImage {
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 200px;
 	width: 100%;
 	height: auto;
+	/* height: 120vw; */
 	/* background-image:radial-gradient(var(--gray),var(--darkGray),black); */
 	/* background-image: url(https://www.superprof.com/blog/wp-content/uploads/2019/12/guitar.jpg); */
 	/* background-image: url(https://toppng.com//public/uploads/preview/guitar-strings-neck-guitar-frets-blur-115702405187ynykwgayv.jpg); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	opacity: 0.20;
-    z-index: -2;
+	opacity: 0.2;
+	z-index: -2;
 }

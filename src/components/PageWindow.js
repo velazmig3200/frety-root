@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PageDisplay from "./PageDisplay";
+import PageDisplay2 from "./PageDisplay2";
 import DefaultPage from "./DefaultPage";
 import cc from "./styles/classChain";
 
@@ -12,7 +13,7 @@ class PageWindow extends Component {
 		}
 		return (
 			<div>
-				<PageDisplay
+				<PageDisplay2
 					Artist={Artist}
 					Song={Song}
 					dataPointer={activePage}
