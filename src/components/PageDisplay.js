@@ -26,6 +26,9 @@ class PageDisplay extends Component {
 						key={i}
 						className={cc("page", "listItem")}
 						onClick={() => this.props.clickItem(this.result[i])}>
+						<img
+							src={tabData["feel good inc"]["songInfo"]["ArtistImg"]}
+							className={cc("page", "listItemImg")}></img>
 						<p>{this.result[i]}</p>
 					</div>
 				);
@@ -98,7 +101,8 @@ class PageDisplay extends Component {
 						placeholder={`search ${dataPointer.toLowerCase()}`}
 					/>
 					<br />
-					{this.elements}
+					{/* <div style={{ display: "flex", flexDirection: "row" }}>{this.elements}</div> */}
+					<div>{this.elements}{this.elements}</div>
 				</section>
 			);
 		}

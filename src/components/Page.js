@@ -64,7 +64,7 @@ function Page({ Artist, Song }) {
 				</p>
 			</nav>
 
-			<section>
+			<section style={{height: "100%"}}>
 				<PageWindow
 					Artist={Artist}
 					Song={Song}

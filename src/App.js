@@ -6,7 +6,7 @@ import cc from "./components/styles/classChain";
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className={cc("header", "backgroundImage")}>
 				<Header />
 				<Page Artist="Artist" Song="Song" />
 			</div>

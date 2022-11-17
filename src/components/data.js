@@ -5,6 +5,7 @@ export const tabData = {
 			Artist: "Gorillaz",
 			Album: "Demon Days",
 			Release: "2005",
+            ArtistImg: "https://lh3.googleusercontent.com/PbXmq8wbQDuMg1Jlv0VLRhNBD7WlgT7OzAbwi_VR8VxeyD6qhydaKvLR3EM79VqgCwmIIc0kO4vt9Sg=w1440-h600-p-l90-rj",
 			Instruments: "Bass, Guitar, Ukulele"
 		},
 		bass: {

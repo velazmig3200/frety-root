@@ -23,3 +23,17 @@
 	border-radius: 0px 20px 0px 0px;
 	padding-right: 6px; */
 }
+
+.backgroundImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background-image:radial-gradient(var(--gray),var(--darkGray),black); */
+	/* background-image: url(https://www.superprof.com/blog/wp-content/uploads/2019/12/guitar.jpg); */
+	/* background-image: url(https://toppng.com//public/uploads/preview/guitar-strings-neck-guitar-frets-blur-115702405187ynykwgayv.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
