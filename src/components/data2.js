@@ -25,7 +25,33 @@ export const musicData = {
 				songs = { ...songs, ...this.album()[i]["song"] };
 			}
 			if (input == "key") return Object.keys(songs);
-			return console.log(songs);
+			return songs;
+		},
+		getArtist(searchItem) {
+			let result = null;
+			for (let i in this.artist()) {
+				let albums = [{ ...this.artist()[i]["album"] }];
+				albums.find(e => {
+					if (e[searchItem]) {
+						return (result = musicData[i]);
+					}
+				});
+			}
+			if (result != null) {
+				return result;
+			}
+			for (let i in this.artist()) {
+				let albums = [{ ...this.artist()[i]["album"] }];
+				for (let x in albums[0]) {
+					let songs = [{ ...albums[0][x]["song"] }];
+					songs.find(e => {
+						if (e[searchItem]) {
+							return (result = musicData[i]);
+						}
+					});
+				}
+			}
+			return result;
 		}
 	},
 	Gorillaz: {
@@ -70,7 +96,24 @@ export const musicData = {
 			}
 		}
 	},
-	"Foster the People": { image: "", album: { "an album": { song: { "a song": {} } } } },
-	"Yeah Yeah Yeahs": { image: "", album: "" },
-	"Mac Miller": { image: "", album: "" }
+	"Foster the People": {
+		image:
+			"https://lh3.googleusercontent.com/mzGNsARMkqn-eWbtk_d_vILqWdKiHGEotbvDCxNasI7OK9QyM4mkMAA8zzMnmQnmzl1iVB4tSfMCk6Oy=w1440-h600-p-l90-rj",
+		album: {
+			torches: {
+				song: {
+					"i miss u": {}
+				}
+			}
+		}
+	},
+	"Yeah Yeah Yeahs": {
+		image: "https://lh3.googleusercontent.com/_A-7JeKRO2rw8oVT2H2mLpnCF1rIA81XdbAz4xCXho0SvjJzSchdXyVd-tJ2grfpSph48DnyaNpEagA=w1440-h600-p-l90-rj",
+		album: ""
+	},
+	"Mac Miller": {
+		image:
+			"https://lh3.googleusercontent.com/2mW8aHStIR7OpN4ZAEbusTSbNnUoLYRJ6EqkOLx3EL_eCjr5shAgjm4zTxqZubxVOfZracBo=w1440-h600-p-l90-rj",
+		album: ""
+	}
 };

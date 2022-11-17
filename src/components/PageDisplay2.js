@@ -11,33 +11,37 @@ class PageDisplay extends Component {
 
 	//get random song/artist items, add to elements[] and return them
 	randomItem(dataPointer, len) {
-		//path to random item
-		let keys = Object.keys(tabData);
-		let randomInt = Math.floor(Math.random() * keys.length);
-		let item = tabData[keys[randomInt]]["songInfo"][dataPointer];
-		let artistImage = tabData[keys[randomInt]]["songInfo"]["Artist Image"];
-		//if item is !included already in result[], push(item)
-		!this.result.includes(item) && this.result.push(item) && this.result2.push(artistImage);
+		let dataPointer1 = dataPointer.toLowerCase();
+		let getArtist = input => musicData.list.getArtist(input);
+		let itemList = input => musicData.list[dataPointer1](input);
+		let randomInt1 = Math.floor(Math.random() * itemList("key").length);
+		let item1 = {
+			name: itemList("key")[randomInt1],
+			...itemList()[itemList("key")[randomInt1]]
+		};
+		// "!.find()" returns true if it is a unique item
+		!this.result.find(e => e.name == item1.name) && this.result.push(item1);
 
-		//if (result.length < len) call again, else consolidate elements[] and result[]
 		if (this.result.length < len) {
 			this.randomItem(dataPointer, len);
 		} else {
 			for (let i = 0; i < this.result.length; i++) {
+				if (dataPointer == "Song") {
+					this.result[i].image = getArtist(this.result[i].name).image;
+				}
 				this.elements[i] = (
 					<div
 						key={i}
 						className={cc("page", "listItem")}
-						onClick={() => this.props.clickItem(this.result[i])}>
+						onClick={() => this.props.clickItem(this.result[i].name)}>
 						<img
-							// src={tabData["feel good inc"]["songInfo"]["Artist Image"]}
-							src={this.result2[i]}
+							loading="lazy"
+							src={this.result[i].image}
 							className={cc("page", "listItemImg")}></img>
-						<p>{this.result[i]}</p>
+						<p>{this.result[i].name}</p>
 					</div>
 				);
 			}
-			return this.elements;
 		}
 	}
 
@@ -88,7 +92,6 @@ class PageDisplay extends Component {
 		//reset arrays for re-render
 		this.result = [];
 		this.elements = [];
-		console.log(musicData.list.song());
 		//for default tabs, "Artist" and "Song"
 		if (dataPointer == Song || dataPointer == Artist) {
 			if (value == "") {
