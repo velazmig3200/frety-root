@@ -12,13 +12,17 @@
 	height: 25px;
 	float: left;
 	/*attr*/
+	background-color: var(--darkGray);
 	user-select: none;
+	border-radius: 4px 4px 0px 0px;
 	border-bottom: 2px solid var(--white);
+}
+.page:hover {
+	box-shadow: 0px 0px 50px var(--dark);
 }
 .active {
 	background-color: var(--dark);
 	margin-top: 0px;
-	border-radius: 4px 4px 0px 0px;
 }
 
 .pageContainer {
@@ -85,8 +89,9 @@
 	border-bottom: 2px solid var(--gray);
 }
 .listItem:hover {
-	color: var(--highlight2);
+	color: var(--main);
 	text-decoration: underline;
+	box-shadow: 0px 0px 30px var(--dark);
 }
 .listItem:last-child {
 	border-bottom: 0px;
