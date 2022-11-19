@@ -2,7 +2,7 @@
 
 .navBar {
 	color: white;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 .navTab {
 	/* spacing */
@@ -20,7 +20,7 @@
 	margin-top: 0px;
 }
 .navTab:hover {
-	box-shadow: 0px 0px 35px var(--white);
+	box-shadow: 0px 0px 35px var(--lightGray);
 }
 .pageContainer1 {
 	margin: 0px 20px;
@@ -29,10 +29,32 @@
 	display: flex;
 	justify-content: center;
 }
+.searchBar1 {
+	/*spacing*/
+	display: flex;
+	justify-content: center;
+	width: 30%;
+	margin: auto;
+	margin-top: 20px;
+	padding: 5px 12px;
+	/*text*/
+	color: var(--white);
+	/*attr*/
+	background-color: var(--lightGray);
+	border: 1px solid var(--black);
+	border-radius: 9px;
+}
+.searchBar1:focus {
+	background-color: var(--debug);
+	border: 1px solid var(--highlight);
+	outline: 0px;
+}
 .cardContainer {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	overflow: auto;
+	padding-top: 15px;
 }
 .card {
 	/*spacing*/
@@ -49,7 +71,7 @@
 	border-bottom: 1px solid var(--gray);
 }
 .card:hover {
-	box-shadow: 0px 0px 35px var(--white);
+	box-shadow: 0px 0px 45px var(--dark);
 	color: var(--main);
 	text-decoration: underline;
 }
@@ -137,7 +159,7 @@
 	outline: 0px;
 }
 ::placeholder {
-	color: var(--lightGray);
+	/* color: var(--lightGray); */
 }
 
 .listItem {
@@ -172,7 +194,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: var(--darkGray);
+	background: var(--gray);
 	border-radius: 5px;
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchBar from "./SearchBar";
 import cc from "./styles/classChain";
 
 function NavBar({ tabs, activePage, setActivePage }) {

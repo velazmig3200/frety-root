@@ -10,9 +10,11 @@ function App() {
 
 	return (
 		<div className={cc("header", "")}>
-			<img
-				className={cc("header", "backgroundImage")}
-				src="https://toppng.com//public/uploads/preview/guitar-strings-neck-guitar-frets-blur-115702405187ynykwgayv.jpg"></img>
+			<div className={cc("header", "bgImageContainer")}>
+				<img
+					className={cc("header", "backgroundImage")}
+					src="https://toppng.com//public/uploads/preview/guitar-strings-neck-guitar-frets-blur-115702405187ynykwgayv.jpg"></img>
+			</div>
 			<Header />
 			<NavBar
 				tabs={["artist", "song"]}
