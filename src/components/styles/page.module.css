@@ -1,8 +1,76 @@
 @import "./aa-theme.css";
 
+.navBar {
+	color: white;
+	margin-bottom: 20px;
+}
+.navTab {
+	/* spacing */
+	margin: 0px 10px;
+	padding: 10px 19px 10px 17px;
+	height: 25px;
+	/*attr*/
+	background-color: var(--darkGray);
+	user-select: none;
+	border-radius: 4px 4px 0px 0px;
+	border-bottom: 2px solid var(--white);
+}
+.active1 {
+	background-color: var(--dark);
+	margin-top: 0px;
+}
+.navTab:hover {
+	box-shadow: 0px 0px 35px var(--white);
+}
+.pageContainer1 {
+	margin: 0px 20px;
+}
+.pageContainer1 > * {
+	display: flex;
+	justify-content: center;
+}
+.cardContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.card {
+	/*spacing*/
+	float: left;
+	padding: 13px;
+	width: fit-content;
+	height: fit-content;
+	margin: 16px 3px;
+	/*display*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*attr*/
+	border-bottom: 1px solid var(--gray);
+}
+.card:hover {
+	box-shadow: 0px 0px 35px var(--white);
+	color: var(--main);
+	text-decoration: underline;
+}
+.cardImage {
+	width: fit-content;
+	height: 150px;
+}
+
+/* component restructure end */
 .center {
 	display: flex;
 	justify-content: center;
+}
+
+.pageContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 1%;
+	font-size: 17px;
+	height: 80%;
+	overflow: auto;
 }
 
 .page {
@@ -25,18 +93,6 @@
 	margin-top: 0px;
 }
 
-.pageContainer {
-	display: flex;
-	flex-direction: column;
-	margin: 0px 1%;
-	font-size: 17px;
-	height: 80%;
-}
-
-.navBar {
-	background-color: var(--debug);
-}
-
 .pageWindow {
 	padding: 10px;
 	margin: auto;
@@ -46,7 +102,7 @@
 }
 .pageWindow > * {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	margin: auto;
 	flex-wrap: wrap;
 }
@@ -96,13 +152,33 @@
 	text-decoration: underline;
 	box-shadow: 0px 0px 30px var(--dark);
 }
-/* .listItem:last-child {
-	border-bottom: 0px;
-} */
-
 .listItemImg {
 	width: 100%;
 	height: 100px;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+::-webkit-scrollbar-track:hover {
+	background-color: var(--darkGray);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--darkGray);
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--gray);
 }
 
 /*unused*/

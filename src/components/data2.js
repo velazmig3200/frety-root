@@ -6,25 +6,25 @@ artist info, album, album info, song, song info/tabs, etc...
 */
 export const musicData = {
 	list: {
-		artist(input) {
+		artist(key) {
 			const { list: _, ...newObject } = musicData;
-			if (input == "key") return Object.keys(newObject);
+			if (key == "key") return Object.keys(newObject);
 			return newObject;
 		},
-		album(input) {
+		album(key) {
 			let albums = {};
 			for (let i in this.artist()) {
 				albums = { ...albums, ...this.artist()[i]["album"] };
 			}
-			if (input == "key") return Object.keys(albums);
+			if (key == "key") return Object.keys(albums);
 			return albums;
 		},
-		song(input) {
+		song(key) {
 			let songs = {};
 			for (let i in this.album()) {
 				songs = { ...songs, ...this.album()[i]["song"] };
 			}
-			if (input == "key") return Object.keys(songs);
+			if (key == "key") return Object.keys(songs);
 			return songs;
 		},
 		getArtist(searchItem) {
@@ -49,6 +49,15 @@ export const musicData = {
 							return (result = musicData[i]);
 						}
 					});
+				}
+			}
+			return result;
+		},
+		getAlbum(searchItem) {
+			let result = null;
+			for (let i in this.album()) {
+				if (Object.keys(this.album()[i]["song"]).includes(searchItem)) {
+					return (result = this.album()[i]);
 				}
 			}
 			return result;
@@ -101,6 +110,8 @@ export const musicData = {
 			"https://lh3.googleusercontent.com/mzGNsARMkqn-eWbtk_d_vILqWdKiHGEotbvDCxNasI7OK9QyM4mkMAA8zzMnmQnmzl1iVB4tSfMCk6Oy=w1440-h600-p-l90-rj",
 		album: {
 			torches: {
+				release: "",
+				image: "",
 				song: {
 					"i miss u": {},
 					Houdini: {}
@@ -111,11 +122,23 @@ export const musicData = {
 	"Yeah Yeah Yeahs": {
 		image:
 			"https://lh3.googleusercontent.com/_A-7JeKRO2rw8oVT2H2mLpnCF1rIA81XdbAz4xCXho0SvjJzSchdXyVd-tJ2grfpSph48DnyaNpEagA=w1440-h600-p-l90-rj",
-		album: ""
+		album: {
+			"it's Bl!t's": {
+				release: "",
+				image: "",
+				song: {}
+			}
+		}
 	},
 	"Mac Miller": {
 		image:
 			"https://lh3.googleusercontent.com/2mW8aHStIR7OpN4ZAEbusTSbNnUoLYRJ6EqkOLx3EL_eCjr5shAgjm4zTxqZubxVOfZracBo=w1440-h600-p-l90-rj",
-		album: ""
+		album: {
+			Circles: {
+				release: "",
+				image: "",
+				song: {}
+			}
+		}
 	}
 };
