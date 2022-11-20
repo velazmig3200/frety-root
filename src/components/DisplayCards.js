@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { musicData } from "./data2";
 import cc from "./styles/classChain";
 
-function DisplayCards({ activePage }) {
+function DisplayCards({ activePage, value, setValue }) {
+	const [page, setPage] = useState(activePage);
 	let itemList = [];
 	let result = [];
+
+	useEffect(() => {
+		page != activePage && setPage(activePage);
+	}, [activePage, page]);
 
 	function getItemList(obj, key) {
 		const randomInt = Math.floor(Math.random() * key.length);
@@ -37,6 +42,14 @@ function DisplayCards({ activePage }) {
 				</div>
 			);
 		}
+	}
+
+	if (value != "") {
+		return (
+			<section className={cc("page", "cardContainer")}>
+				<p style={{ color: "var(--highlight2)" }}>debug: {value}</p>
+			</section>
+		);
 	}
 
 	switch (activePage) {

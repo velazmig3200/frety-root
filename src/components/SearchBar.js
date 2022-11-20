@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cc from "./styles/classChain";
 
-function SearchBar({ activePage }) {
-	const [value, setValue] = useState("");
-	const [page, setPage] = useState(activePage);
-	if (page != activePage) {
-		setPage(activePage);
+function SearchBar({ activePage, value, setValue }) {
+	// const [value, setValue] = useState("");
+	useEffect(() => {
 		setValue("");
-	}
-
+	}, [activePage]);
 	return (
 		<input
 			type="text"

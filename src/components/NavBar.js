@@ -1,25 +1,21 @@
-import React, { useState } from "react";
-import SearchBar from "./SearchBar";
+import React, { useState, useEffect } from "react";
 import cc from "./styles/classChain";
 
 function NavBar({ tabs, activePage, setActivePage }) {
-	const [elements, setElements] = useState([]);
-
-	function clickTab(tabName) {
-		setElements([]);
-		if (activePage == tabName) {
-			setActivePage("");
-			return;
-		}
-		setActivePage(tabName);
-	}
+	let elements = [];
 
 	for (let i in tabs) {
 		elements.push(
 			<p
 				key={i}
 				className={cc("page", `navTab ${activePage == tabs[i]}?active1`)}
-				onClick={() => clickTab(tabs[i])}>
+				onClick={() => {
+					if (activePage == tabs[i]) {
+						setActivePage("");
+					} else {
+						setActivePage(tabs[i]);
+					}
+				}}>
 				{tabs[i][0].toUpperCase()}
 				{tabs[i].slice(1, tabs[i].length)}
 			</p>

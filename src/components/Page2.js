@@ -22,11 +22,12 @@ function Page2({ activePage }) {
 	}
 
 	//if it's not a song ("artist", "song", or a specific artist)
+	const [value, setValue] = useState("");
 	if (!musicData.list.song("key").includes(activePage)) {
 		return (
 			<div className={cc("page", "pageContainer")}>
-				<SearchBar activePage={activePage} />
-				<DisplayCards activePage={activePage} />
+				<SearchBar activePage={activePage} value={value} setValue={setValue} />
+				<DisplayCards activePage={activePage} value={value} />
 			</div>
 		);
 	}
