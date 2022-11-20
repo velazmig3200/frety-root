@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { musicData } from "./data2";
 import cc from "./styles/classChain";
 
-function DisplayCards({ activePage, value, setValue }) {
+function DisplayCards({ activePage, value }) {
 	const [page, setPage] = useState(activePage);
 	let itemList = [];
 	let result = [];
+	value = value.toLowerCase();
 
 	useEffect(() => {
 		page != activePage && setPage(activePage);
@@ -45,11 +46,30 @@ function DisplayCards({ activePage, value, setValue }) {
 	}
 
 	if (value != "") {
-		return (
-			<section className={cc("page", "cardContainer")}>
-				<p style={{ color: "var(--highlight2)" }}>debug: {value}</p>
-			</section>
-		);
+		let obj = {};
+		let key = [];
+		let maxLength = 20;
+		const list = musicData.list;
+
+		switch (activePage) {
+			case "artist":
+				list.artist("key").forEach(e => {
+					e.toLowerCase().includes(value) && key.length < maxLength && key.push(e); //key
+				});
+				key.forEach(e => (obj = { ...obj, ...{ [e]: musicData[e] } })); //obj
+				break;
+			case "song":
+				list.song("key").forEach(e => {
+					e.toLowerCase().includes(value) && key.length < maxLength && key.push(e); //key
+				});
+				key.forEach(e => (obj = { ...obj, ...{ [e]: musicData.list.song()[e] } }));
+				break;
+			default:
+				console.log("artist:", activePage);
+		}
+
+		key.length > 0 && getItemList(obj, key);
+		return <section className={cc("page", "cardContainer")}>{result}</section>;
 	}
 
 	switch (activePage) {

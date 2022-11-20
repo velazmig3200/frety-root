@@ -110,10 +110,11 @@ export const musicData = {
 			"https://lh3.googleusercontent.com/mzGNsARMkqn-eWbtk_d_vILqWdKiHGEotbvDCxNasI7OK9QyM4mkMAA8zzMnmQnmzl1iVB4tSfMCk6Oy=w1440-h600-p-l90-rj",
 		album: {
 			torches: {
-				release: "",
-				image: "",
+				release: "2011",
+				image:
+					"https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Torches_foster_the_people.jpg/220px-Torches_foster_the_people.jpg",
 				song: {
-					"i miss u": {},
+					"Miss You": {},
 					Houdini: {}
 				}
 			}
@@ -123,10 +124,13 @@ export const musicData = {
 		image:
 			"https://lh3.googleusercontent.com/_A-7JeKRO2rw8oVT2H2mLpnCF1rIA81XdbAz4xCXho0SvjJzSchdXyVd-tJ2grfpSph48DnyaNpEagA=w1440-h600-p-l90-rj",
 		album: {
-			"it's Bl!t's": {
-				release: "",
-				image: "",
-				song: {}
+			"It's Blitz!": {
+				release: "2009",
+				image:
+					"https://i.discogs.com/xnLeU_5z_-3jT6MeA4TH1trcYp3JaXXgKtmWV-7s-UM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MTU4/NDktMTMyMzM5OTU2/NS5qcGVn.jpeg",
+				song: {
+					"Heads Will Roll": {}
+				}
 			}
 		}
 	},
@@ -135,9 +139,12 @@ export const musicData = {
 			"https://lh3.googleusercontent.com/2mW8aHStIR7OpN4ZAEbusTSbNnUoLYRJ6EqkOLx3EL_eCjr5shAgjm4zTxqZubxVOfZracBo=w1440-h600-p-l90-rj",
 		album: {
 			Circles: {
-				release: "",
-				image: "",
-				song: {}
+				release: "2020",
+				image:
+					"https://upload.wikimedia.org/wikipedia/en/1/15/Mac_Miller_-_Circles.png",
+				song: {
+					Surf: {}
+				}
 			}
 		}
 	}
