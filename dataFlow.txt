@@ -1,32 +1,11 @@
-App.js: {
-    <Header />: {
-        css: "header"
-    },
-    <Page {Artist} {Song} />: {
-        css: "page, page, active, pageContainer",
-        /*
-            {randomItem's}: ""
-        */
-        <PageWindow {Artist} {Song} {activePage} />: {
-            css: "page, pageWindow"
-            <DefaultPage />: {
-                css: "page, pageWindow"
-            },
-            <PageDisplay {Artist} {Song} {dataPointer} />: {
-                css: "page",
-                <input />: {
-                    css: "page, searchBar"
-                },
-                {randomArtistItem} {dataPointer = Artist}: {
-                    css: "page, randomItem",
-                } 
-                {randomSongItem} {dataPointer = Song}: {
-                    css: "page, randomItem",
-                }
-                <p> {dataPointer = other} </p>: {
-                    css: ""
-                }
-            }
-        }
-    }
-}
+App.js = [
+    <background image />,
+    <Header />,
+    <NavBar />,
+    <Page2 /> = [
+        "display default page",
+        <SearchBar />,
+        <DisplayCards />,
+        "display tab"
+    ]
+]

@@ -7,6 +7,7 @@ import cc from "./components/styles/classChain";
 
 function App() {
 	const [activePage, setActivePage] = useState("");
+	const [tabs, setTabs] = useState([]);
 
 	return (
 		<div className={cc("header", "")}>
@@ -17,11 +18,17 @@ function App() {
 			</div>
 			<Header />
 			<NavBar
-				tabs={["artist", "song"]}
+				tabs={tabs}
+				setTabs={setTabs}
 				activePage={activePage}
 				setActivePage={setActivePage}
 			/>
-			<Page2 activePage={activePage} />
+			<Page2
+				activePage={activePage}
+				setActivePage={setActivePage}
+				tabs={tabs}
+				setTabs={setTabs}
+			/>
 
 			{/* <Page artist="artist" song="song" /> */}
 		</div>

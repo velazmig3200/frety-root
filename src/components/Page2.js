@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import { musicData } from "./data2.js";
 import cc from "./styles/classChain";
 
-function Page2({ activePage }) {
+function Page2({ activePage, setActivePage, tabs, setTabs }) {
 	const [value, setValue] = useState("");
 	//default page
 	if (activePage == "") {
@@ -24,7 +24,13 @@ function Page2({ activePage }) {
 		return (
 			<div className={cc("page", "pageContainer")}>
 				<SearchBar activePage={activePage} value={value} setValue={setValue} />
-				<DisplayCards activePage={activePage} value={value} />
+				<DisplayCards
+					activePage={activePage}
+					setActivePage={setActivePage}
+					value={value}
+					tabs={tabs}
+					setTabs={setTabs}
+				/>
 			</div>
 		);
 	}

@@ -2,49 +2,56 @@ import React, { useState, useEffect } from "react";
 import { musicData } from "./data2";
 import cc from "./styles/classChain";
 
-function DisplayCards({ activePage, value }) {
+function DisplayCards({ activePage, setActivePage, value, tabs, setTabs }) {
 	const [page, setPage] = useState(activePage);
 	let itemList = [];
-	let result = [];
+	let elements = [];
 	value = value.toLowerCase();
 
 	useEffect(() => {
 		page != activePage && setPage(activePage);
 	}, [activePage, page]);
 
-	function getItemList(obj, key) {
-		const randomInt = Math.floor(Math.random() * key.length);
+	function getItemList(obj, keys) {
+		const randomInt = Math.floor(Math.random() * keys.length);
 		let maxLength = 20;
 		let image;
-		key.length < maxLength && (maxLength = key.length);
+		keys.length < maxLength && (maxLength = keys.length);
 
 		if (activePage == "song") {
-			image = musicData.list.getAlbum(key[randomInt]).image;
+			image = musicData.list.getAlbum(keys[randomInt]).image;
 		} else {
-			image = obj[key[randomInt]].image;
+			image = obj[keys[randomInt]].image;
 		}
 
 		if (itemList.length < maxLength) {
-			if (!itemList.find(e => e.name == key[randomInt])) {
-				itemList = [...itemList, { name: key[randomInt], image: image }];
+			if (!itemList.find(e => e.name == keys[randomInt])) {
+				itemList = [...itemList, { name: keys[randomInt], image: image }];
 			}
-			getItemList(obj, key);
+			getItemList(obj, keys);
 		} else {
-			getElements(itemList);
+			//get elements
+			for (let i in itemList) {
+				elements[i] = (
+					<div
+						key={i}
+						className={cc("page", "card")}
+						onClick={() => {
+							if (!tabs.includes(itemList[i].name)) {
+								let newTabs = tabs.slice(0, 1);
+								setTabs([itemList[i].name, ...newTabs]);
+							}
+							setActivePage(itemList[i].name);
+						}}>
+						<img src={itemList[i].image} className={cc("page", "cardImage")}></img>
+						<p>{itemList[i].name}</p>
+					</div>
+				);
+			}
 		}
 	}
 
-	function getElements(itemList) {
-		for (let i in itemList) {
-			result[i] = (
-				<div key={i} className={cc("page", "card")}>
-					<img src={itemList[i].image} className={cc("page", "cardImage")}></img>
-					<p>{itemList[i].name}</p>
-				</div>
-			);
-		}
-	}
-
+	//search functionality
 	if (value != "") {
 		let obj = {};
 		let key = [];
@@ -69,9 +76,10 @@ function DisplayCards({ activePage, value }) {
 		}
 
 		key.length > 0 && getItemList(obj, key);
-		return <section className={cc("page", "cardContainer")}>{result}</section>;
+		return <section className={cc("page", "cardContainer")}>{elements}</section>;
 	}
 
+	//regular display
 	switch (activePage) {
 		case "artist":
 			const artist = key => musicData.list.artist(key);
@@ -86,7 +94,7 @@ function DisplayCards({ activePage, value }) {
 			break;
 	}
 
-	return <section className={cc("page", "cardContainer")}>{result}</section>;
+	return <section className={cc("page", "cardContainer")}>{elements}</section>;
 }
 
 export default DisplayCards;
