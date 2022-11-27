@@ -18,7 +18,7 @@ function DisplayCards({ activePage, setActivePage, value, tabs, setTabs }) {
 		let image;
 		keys.length < maxLength && (maxLength = keys.length);
 
-		if (activePage == "song") {
+		if (activePage == "song" || musicData.list.song("key").includes(keys[0])) {
 			image = musicData.list.getAlbum(keys[randomInt]).image;
 		} else {
 			image = obj[keys[randomInt]].image;
@@ -72,7 +72,7 @@ function DisplayCards({ activePage, setActivePage, value, tabs, setTabs }) {
 				key.forEach(e => (obj = { ...obj, ...{ [e]: musicData.list.song()[e] } }));
 				break;
 			default:
-				console.log("artist:", activePage);
+				console.log(activePage, musicData[activePage]);
 		}
 
 		key.length > 0 && getItemList(obj, key);
@@ -90,7 +90,14 @@ function DisplayCards({ activePage, setActivePage, value, tabs, setTabs }) {
 			getItemList(song(), song("key"));
 			break;
 		default:
-			console.log(activePage);
+			let obj = {};
+			let keys = [];
+			for (let i in musicData[activePage]["album"]) {
+				let path = musicData[activePage]["album"][i].song;
+				obj = { ...obj, ...path }; //obj
+				keys = [...keys, ...Object.keys(path)]; //key
+			}
+			getItemList(obj, keys);
 			break;
 	}
 
