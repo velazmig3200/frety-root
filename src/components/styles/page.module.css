@@ -108,12 +108,18 @@
 }
 
 .tabContainer {
+	/*spacing*/
 	display: block;
-	font-family: "Courier New", Courier, monospace;
-	font-size: 30px;
 	margin-top: 5px;
 	margin-bottom: 45px;
-	overflow-x: scroll;
+	padding: 7px 20px;
+	overflow-x: auto;
+	/*text*/
+	font-family: "Courier New", Courier, monospace;
+	font-size: 30px;
+	/*attr*/
+	background-color: var(--mainA);
+	border-radius: 10px;
 }
 .tabContainer > p {
 	width: max-content;

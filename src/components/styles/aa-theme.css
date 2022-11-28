@@ -1,9 +1,12 @@
 :root {
 	--dark: hsl(192, 71%, 23%);
+	--darkA: hsla(200, 50%, 22%, 0.9);
 	--dark2: hsla(150, 78%, 10%);
 	--main: hsl(150, 48%, 57%);
+	--mainA: hsla(150, 51%, 29%, 0.85);
 	--main2: hsl(170, 48%, 57%);
 	--highlight: palevioletred;
+	--highlightA: hsla(340, 42%, 28%, 0.9);
 	/* --highlight2: hsl(60, 100%, 71%);  */
 	--highlight2: hsl(59, 100%, 70%);
 

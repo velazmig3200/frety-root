@@ -12,12 +12,17 @@ function DisplayTab({ tab }) {
 	for (let i in keys) {
 		elements.push(
 			<p key={i}>
-				{keys[i]}: {values[i]}
+				{keys[i]}
+				{values[i]}
 			</p>
 		);
 	}
 
-	return <div className={cc("page", "tabContainer")}>{elements}</div>;
+	return (
+		<div className={cc("page", `${elements.length > 0}?tabContainer`)}>
+			{elements}
+		</div>
+	);
 }
 
 export default DisplayTab;
