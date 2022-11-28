@@ -27,12 +27,15 @@ export const musicData = {
 			if (key == "key") return Object.keys(songs);
 			return songs;
 		},
-		getArtist(searchItem) {
+		getArtist(searchItem, key) {
 			let result = null;
 			for (let i in this.artist()) {
 				let albums = [{ ...this.artist()[i]["album"] }];
 				albums.find(e => {
 					if (e[searchItem]) {
+						if (key == "key") {
+							return (result = i);
+						}
 						return (result = musicData[i]);
 					}
 				});
@@ -46,6 +49,9 @@ export const musicData = {
 					let songs = [{ ...albums[0][x]["song"] }];
 					songs.find(e => {
 						if (e[searchItem]) {
+							if (key == "key") {
+								return (result = i);
+							}
 							return (result = musicData[i]);
 						}
 					});
@@ -53,10 +59,13 @@ export const musicData = {
 			}
 			return result;
 		},
-		getAlbum(searchItem) {
+		getAlbum(searchItem, key) {
 			let result = null;
 			for (let i in this.album()) {
 				if (Object.keys(this.album()[i]["song"]).includes(searchItem)) {
+					if (key == "key") {
+						return (result = i);
+					}
 					return (result = this.album()[i]);
 				}
 			}

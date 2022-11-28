@@ -81,6 +81,23 @@
 	height: 150px;
 }
 
+.songInfoContainer {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+.songInfoImage {
+	width: 200px;
+}
+.details {
+	margin-left: 20px;
+	height: auto;
+}
+.details > p {
+	padding-top: 16%;
+	border-bottom: 1px solid var(--gray);
+}
+
 /* component restructure end */
 .center {
 	display: flex;

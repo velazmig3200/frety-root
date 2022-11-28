@@ -19,7 +19,7 @@ function App() {
 			<Header />
 			<NavBar
 				tabs={tabs}
-				setTabs={setTabs}
+				defaultTabs={["artist", "song"]}
 				activePage={activePage}
 				setActivePage={setActivePage}
 			/>
