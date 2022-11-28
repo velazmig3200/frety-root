@@ -82,10 +82,10 @@ export const musicData = {
 				song: {
 					"Feel Good Inc": {
 						bass: {
-							G: "",
-							D: "",
-							A: "",
-							E: ""
+							G: "|--------------|----------|--------------|----------|--------------|----------|--------------|----------|",
+							D: "|--------------|----------|--------------|----------|--------------|----------|--------------|----------|",
+							A: "|------------3-|-2--------|-0---0-3-2----|----------|------------3-|-2--------|-0---0-3-2----|----------|",
+							E: "|-0---0-2-3----|----------|------------3-|--0-------|-0---0-2-3----|----------|------------3-|--0-------|"
 						},
 						guitar: {
 							e: "",
@@ -102,14 +102,18 @@ export const musicData = {
 							G: ""
 						}
 					},
-					DARE: {}
+					DARE: {
+						bass: {}
+					}
 				}
 			},
 			"Plastic Beach": {
 				release: "2010",
 				image: "https://upload.wikimedia.org/wikipedia/en/d/d1/Plasticbeach452.jpg",
 				song: {
-					"Melancholy Hill": {}
+					"Melancholy Hill": {
+						bass: {}
+					}
 				}
 			}
 		}
@@ -123,8 +127,12 @@ export const musicData = {
 				image:
 					"https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Torches_foster_the_people.jpg/220px-Torches_foster_the_people.jpg",
 				song: {
-					"Miss You": {},
-					Houdini: {}
+					"Miss You": {
+						bass: {}
+					},
+					Houdini: {
+						bass: {}
+					}
 				}
 			}
 		}
@@ -138,7 +146,9 @@ export const musicData = {
 				image:
 					"https://i.discogs.com/xnLeU_5z_-3jT6MeA4TH1trcYp3JaXXgKtmWV-7s-UM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MTU4/NDktMTMyMzM5OTU2/NS5qcGVn.jpeg",
 				song: {
-					"Heads Will Roll": {}
+					"Heads Will Roll": {
+						bass: {}
+					}
 				}
 			}
 		}
@@ -152,7 +162,9 @@ export const musicData = {
 				image:
 					"https://upload.wikimedia.org/wikipedia/en/1/15/Mac_Miller_-_Circles.png",
 				song: {
-					Surf: {}
+					Surf: {
+						guitar: {}
+					}
 				}
 			}
 		}

@@ -6,6 +6,7 @@ import DisplayCards from "./DisplayCards";
 import SearchBar from "./SearchBar";
 import DisplaySongInfo from "./DisplaySongInfo.js";
 import NavBar from "./NavBar.js";
+import DisplayTab from "./DisplayTab.js";
 
 function Page2({ activePage, setActivePage, tabs, setTabs }) {
 	const [value, setValue] = useState("");
@@ -40,7 +41,7 @@ function Page2({ activePage, setActivePage, tabs, setTabs }) {
 		);
 	}
 
-	//if it's a song
+	//if it's a song, displayTab
 	const getArtist = (searchItem, key) =>
 		musicData.list.getArtist(searchItem, key);
 	const getAlbum = (searchItem, key) => musicData.list.getAlbum(searchItem, key);
@@ -48,21 +49,17 @@ function Page2({ activePage, setActivePage, tabs, setTabs }) {
 		musicData[getArtist(activePage, "key")]["album"][getAlbum(activePage, "key")][
 			"song"
 		][activePage];
+	const tabPath = songPath[instrument];
 
 	return (
 		<div className={cc("page", "pageContainer1")}>
 			<DisplaySongInfo activePage={activePage} />
-			<br />
 			<NavBar
 				tabs={[...Object.keys(songPath)]}
 				activePage={instrument}
 				setActivePage={setInstrument}
 			/>
-			{console.log(instrument)}
-			<p>
-				<span style={{ color: "var(--highlight)" }}>instruments: </span>
-				{Object.keys(songPath).join(", ")}
-			</p>
+			<DisplayTab tab={tabPath} />
 		</div>
 	);
 }
