@@ -4,8 +4,12 @@ App.js = [
     <NavBar />,
     <Page2 /> = [
         "display default page",
-        <SearchBar />,
+
+        <SearchBar />, 
         <DisplayCards />,
-        "display tab"
+        
+        <DisplaySongInfo />, 
+        <NavBar />, 
+        <DisplayTab />
     ]
 ]

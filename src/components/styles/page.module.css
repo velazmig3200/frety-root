@@ -12,9 +12,8 @@
 }
 .navTab {
 	/* spacing */
-	margin: 10px 10px;
+	margin: 10px 10px 0px 10px;
 	padding: 10px 19px 10px 17px;
-	height: 25px;
 	/*attr*/
 	background-color: var(--darkGray);
 	user-select: none;
@@ -41,8 +40,7 @@
 	display: flex;
 	justify-content: center;
 	width: 30%;
-	margin: auto;
-	margin-top: 20px;
+	margin: 16px auto 0px auto;
 	padding: 5px 12px;
 	/*text*/
 	color: var(--white);
@@ -61,15 +59,13 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	overflow: auto;
-	padding-top: 15px;
 }
 .card {
 	/*spacing*/
 	float: left;
-	padding: 13px;
 	width: fit-content;
 	height: fit-content;
-	margin: 16px 3px;
+	margin: 16px 16px;
 	/*display*/
 	display: flex;
 	flex-direction: column;
@@ -79,6 +75,9 @@
 	user-select: none;
 	transition: all 0.3s;
 }
+.card > p {
+	padding: 5px 0px;
+}
 .card:hover {
 	box-shadow: 0px 0px 45px var(--dark);
 	color: var(--main);
@@ -86,31 +85,34 @@
 }
 .cardImage {
 	width: fit-content;
-	height: 150px;
+	height: 140px;
 }
 
 .songInfoContainer {
 	display: flex;
 	flex-direction: row;
-	margin-top: 10px;
+	margin-top: 16px;
 	margin-bottom: 5px;
+	flex-wrap: wrap;
 }
 .songInfoImage {
 	width: 200px;
+	height: 200px;
 }
 .details {
 	margin-left: 20px;
 	height: auto;
 }
 .details > p {
-	padding-top: 16%;
+	padding-top: 20px;
 	border-bottom: 1px solid var(--gray);
+	max-width: 400px;
 }
 
 .tabContainer {
 	/*spacing*/
 	display: block;
-	margin-top: 5px;
+	margin-top: 16px;
 	margin-bottom: 45px;
 	padding: 7px 20px;
 	overflow-x: auto;

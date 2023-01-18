@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import cc from "./styles/classChain";
 
 function NavBar({ tabs, defaultTabs, activePage, setActivePage }) {
@@ -6,7 +6,8 @@ function NavBar({ tabs, defaultTabs, activePage, setActivePage }) {
 
 	//for default tabs, "artist", "song"
 	if (defaultTabs) {
-		for (let i = 0; i < defaultTabs.length; i++) {
+		// for (let i = 0; i < defaultTabs.length; i++) {
+		for (let i in defaultTabs) {
 			elements.push(
 				<p
 					key={elements.length}

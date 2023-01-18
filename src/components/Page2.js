@@ -10,7 +10,7 @@ import DisplayTab from "./DisplayTab.js";
 
 function Page2({ activePage, setActivePage, tabs, setTabs }) {
 	const [value, setValue] = useState("");
-	const [instrument, setInstrument] = useState("");
+	const [instrument, setInstrument] = useState(""); //currently active instrument
 
 	//default page
 	if (activePage == "") {
@@ -18,8 +18,7 @@ function Page2({ activePage, setActivePage, tabs, setTabs }) {
 			<div className={cc("page", "pageContainer1")}>
 				<br />
 				<p>
-					Click on the tabs at the top to search artists, search songs, or view
-					recent tabs.
+					Click on the tabs at the top to search artists, songs, or view recent tabs.
 				</p>
 			</div>
 		);
@@ -43,23 +42,23 @@ function Page2({ activePage, setActivePage, tabs, setTabs }) {
 
 	//if it's a song, displayTab
 	const getArtist = (searchItem, key) =>
-		musicData.list.getArtist(searchItem, key);
-	const getAlbum = (searchItem, key) => musicData.list.getAlbum(searchItem, key);
+		musicData.list.getArtist(searchItem, key); //getArtist
+	const getAlbum = (searchItem, key) => musicData.list.getAlbum(searchItem, key); //getAlbum
 	const songPath =
 		musicData[getArtist(activePage, "key")]["album"][getAlbum(activePage, "key")][
 			"song"
-		][activePage];
-	const tabPath = songPath[instrument];
+		][activePage]; //songPath
+	const tabPath = songPath[instrument]; //tabPath
 
 	return (
 		<div className={cc("page", "pageContainer1")}>
 			<DisplaySongInfo activePage={activePage} />
-			<NavBar
-				tabs={[...Object.keys(songPath)]}
+			<NavBar //navBar for instruments
+				tabs={[...Object.keys(songPath)]} //get instruments
 				activePage={instrument}
 				setActivePage={setInstrument}
 			/>
-			<DisplayTab tab={tabPath} />
+			<DisplayTab tab={tabPath} /> {/*current tab*/}
 		</div>
 	);
 }

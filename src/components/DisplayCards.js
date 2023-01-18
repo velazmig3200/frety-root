@@ -69,10 +69,13 @@ function DisplayCards({ activePage, setActivePage, value, tabs, setTabs }) {
 				list.song("key").forEach(e => {
 					e.toLowerCase().includes(value) && key.length < maxLength && key.push(e); //key
 				});
-				key.forEach(e => (obj = { ...obj, ...{ [e]: musicData.list.song()[e] } }));
 				break;
 			default:
-				console.log(activePage, musicData[activePage]);
+				for (let i in musicData[activePage]["album"]) {
+					Object.keys(musicData[activePage]["album"][i]["song"]).forEach(e => {
+						e.toLowerCase().includes(value) && key.length < maxLength && key.push(e); //key
+					});
+				}
 		}
 
 		key.length > 0 && getItemList(obj, key);

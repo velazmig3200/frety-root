@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import cc from "./styles/classChain";
 
 function SearchBar({ activePage, value, setValue }) {
-	// const [value, setValue] = useState("");
 	useEffect(() => {
 		setValue("");
 	}, [activePage]);

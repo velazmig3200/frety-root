@@ -163,7 +163,14 @@ export const musicData = {
 					"https://upload.wikimedia.org/wikipedia/en/1/15/Mac_Miller_-_Circles.png",
 				song: {
 					Surf: {
-						guitar: {}
+						guitar: {
+							e: "",
+							B: "",
+							G: "",
+							D: "",
+							A: "",
+							E: ""
+						}
 					}
 				}
 			}
