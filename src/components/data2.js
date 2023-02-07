@@ -122,7 +122,7 @@ export const musicData = {
 		image:
 			"https://lh3.googleusercontent.com/mzGNsARMkqn-eWbtk_d_vILqWdKiHGEotbvDCxNasI7OK9QyM4mkMAA8zzMnmQnmzl1iVB4tSfMCk6Oy=w1440-h600-p-l90-rj",
 		album: {
-			torches: {
+			Torches: {
 				release: "2011",
 				image:
 					"https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Torches_foster_the_people.jpg/220px-Torches_foster_the_people.jpg",
